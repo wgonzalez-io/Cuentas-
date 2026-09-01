@@ -1,5 +1,7 @@
 import java.util.Scanner; //Este será un programa que nos ayudara a repartir la cuenta de una mesa entre varias personas, incluyendo el porcentaje de propina que se desea dejar.
+import java.util.ArrayList;
 public class division {
+   
     class persona{
         String nombre;
         double consumo;
@@ -11,6 +13,7 @@ public class division {
             System.out.println("Nombre: " + nombre);
             System.out.println("Consumo: " + consumo);
         }
+
     }    
     class consumo{
         String producto;
@@ -38,6 +41,14 @@ public class division {
             this.montoTotal = montoTotal;
             this.descripcion = descripcion;
             this.porcentajePropina = porcentajePropina;
+        }
+    }
+    class mesa{
+         ArrayList<persona> personas;
+         ArrayList<consumo> consumos;
+        public mesa(){
+            this.personas = new ArrayList<>();
+            this.consumos = new ArrayList<>();
         }
     }
     public static void main (String [] args){
