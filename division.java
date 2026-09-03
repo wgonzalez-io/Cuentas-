@@ -2,7 +2,7 @@ import java.util.Scanner; //Este será un programa que nos ayudara a repartir la
 import java.util.ArrayList;
 public class division {
    
-    class persona{
+    static class persona{
         String nombre;
         double consumo;
         public persona(String nombre, double consumo){
@@ -15,7 +15,7 @@ public class division {
         }
 
     }    
-    class consumo{
+    static class consumo{
         String producto;
         double precio;
         persona cliente;
@@ -33,7 +33,8 @@ public class division {
             cliente.consumo += precio;
         }
     }
-    class gastoCompartido{
+
+    static class gastoCompartido{
         double montoTotal;
         String descripcion;
         double porcentajePropina;
@@ -43,7 +44,8 @@ public class division {
             this.porcentajePropina = porcentajePropina;
         }
     }
-    class mesa{
+
+    static class mesa{
          ArrayList<persona> personas;
          ArrayList<consumo> consumos;
         public mesa(){
@@ -51,7 +53,14 @@ public class division {
             this.consumos = new ArrayList<>();
         }
     }
-    public static void main (String [] args){
 
+    public static void main (String [] args){
+        Scanner sc = new Scanner(System.in);
+        persona waskart = new persona("Waskart", 800);
+        consumo consumo1 = new consumo("Pollo a la plancha", 400, waskart);
+        consumo1.mostrarDatos();
+        consumo1.calcularConsumo();
+        waskart.mostrarDatos();
+        sc.close();
     }
 }
