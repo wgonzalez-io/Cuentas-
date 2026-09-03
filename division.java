@@ -61,6 +61,11 @@ public class division {
         consumo1.mostrarDatos();
         consumo1.calcularConsumo();
         waskart.mostrarDatos();
+        persona mateo = new persona("mateo", 100);
+        consumo consumo2 = new consumo("Carne asada", 500, mateo);
+        consumo2.calcularConsumo();
+        consumo2.mostrarDatos();
+        mateo.mostrarDatos();
         sc.close();
     }
 }
